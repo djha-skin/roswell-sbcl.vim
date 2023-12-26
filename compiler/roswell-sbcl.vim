@@ -9,15 +9,41 @@ CompilerSet makeprg=ros\ build\ *.ros
 
 CompilerSet errorformat=
             \%-GWARNING:\ :SB-EVAL\ is\ no\ longer\ present\ in\ *FEATURES*,
-            \%-P\;\ compiling\ file\ \"%f\"%.%#,
-            \%-Q\;\ compilation\ aborted\ after\ %*[0-9:%.],
-            \%-G%[\ ]%#,
-            \%-P\;\ file:\ %f,
-            \%I\;\ in:\ %s,
+            \%Z\ %#,
+            \%Z,
+            \%P\;\ file:\ %f,
+            \%+N\;\ compiling\ file\ \"%f\"%.%#,
+            \%+N\;\ compilation\ aborted%.%#,
+            \%+C\;\ in:\ %.%#,
+            \%C\;\ -->%.%$#,
+            \%C\;\ ==>%.%$#,
+            \%C\;\ %#,
+            \%C\;\ caught\ %tRROR:,
+            \%C\;\ caught\ %tARNING:,
+            \%C\;\ caught\ STYLE-%tARNING:,
+            \%+A\;\ in:\ %.%#,
+            \%A\;\ -->%.%$#,
+            \%A\;\ ==>%.%$#,
+            \%A\;\ %#,
+            \%E\;\ caught\ %tRROR:,
+            \%W\;\ caught\ %tARNING:,
             \%W\;\ caught\ STYLE-%tARNING:,
-            \%-C\;%[\ ]%[\ ]%[\ ]%#%m,
-            \%-Z\;%[\ ]%#,
-            "\%-G%[%^\;]%.%#,
+            \%C\;%*[\ ]Stream:%.%#,
+            \%C\;%*[\ ]Line:\ %l\\,\ Column:\ -\\\\{0\\,1}%c%.%#,
+            \%C\;\ \\\\{3\\,\\}%m,
+            "\%-C\;\ %#,
+            "\%-G[%^\;]%.%#,
+
+";   READ error during COMPILE-FILE:
+";
+";     The symbol "ACCOUNT-CLIENT" is not external in the SKIN.DJHA.PIXIE/CLIENT package.
+";
+";       Line: 67, Column: -1, File-Position: 2095
+";
+";       Stream: #<SB-INT:FORM-TRACKING-STREAM for "file /home/skin/Code/lisp/pixie/src/main.lisp" {100442C823}>
+"
+            
+"\%-G%[%^\;]%.%#,
             "\%-G%*[\;\ ]compil%.%#,
             "\%-G\;,
             "\%-G\;%*[\ ],
