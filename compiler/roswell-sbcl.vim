@@ -8,18 +8,23 @@ endif
 CompilerSet makeprg=ros\ build\ *.ros
 
 CompilerSet errorformat=
-            \%-G%[\ ]%#,
             \%-G%[%^\;]%.%#,
-            \%-G\;\ compiling\ file\ %.%#,
-            \%-G\;\ compilation\ aborted%.%#,
-            \%-G\;%*\\scaught\ %*\\d%.%#,
-            \%-P\;\ file:\ %f,
-            \%-G\;%*[\;\ ]in:\ %s
-            \%-C\;%[\ ]%#,
-            \%+C%>%*[\;\ ]caught\ STYLE-%tARNING:,
-            \%+C%>\;%[\ ]%[\ ]%*[\ ]%m,
-            \%-Z\;%[\ ]%#,
-            \%-Q\;\ compilation\ unit\ aborted%.%#
+            \%-G%*[\;\ ]compil%.%#,
+            \%-G\;,
+            \%-G\;%*[\ ],
+            \%W\;\ file:\ %f,
+            \%C\;\ in:\ %s,
+            \%C%>\;%[\ ]%*[\ ]%[%^\ ]%.%#,
+            \%C\;%[\ ]%#,
+            \%C%>\;%*[\ ]caught\ STYLE-%tARNING:,
+            \%C\;%[\ ]%*[\ ]%m,
+            \%Z
+            "\%-P%*[\;\ ]file:\ %f,
+            "\%-G%>%*[\;\ ]in:\ %s
+            "\%+C%>%*[\;\ ]caught\ STYLE-%tARNING:,
+            "\%-Z\;%[\ ]%#,
+            "\%-G%[\;\ ]%#,
+            "\%-G\;%*[\ ]caught\ %*\\d%.%#,
             "\%-G\;%*[\ ]
             "\%C%>\;%*\\s,
             "\%C%>\;\\scaught\ STYLE-WARNING:,
