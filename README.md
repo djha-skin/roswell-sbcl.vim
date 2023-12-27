@@ -32,7 +32,7 @@ one](https://stackoverflow.com/questions/14012496/sbcl-error-messages-any-way-to
 That's unfortunately a known issue for most messages. However, some errors do
 have line numbers, provided you add  the following to your
 `~/.roswell/init.lisp` as per this [SO
-answer](https://stackoverflow.com/questions/65328131/how-do-i-show-the-line-number-and-source-file-of-an-error-in-sbcl).
+answer](https://stackoverflow.com/questions/65328131/how-do-i-show-the-line-number-and-source-file-of-an-error-in-sbcl):
 
 ```
 #+sbcl
