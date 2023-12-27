@@ -1,4 +1,4 @@
-# Compiler Plugin for Roswell + SBCL in Vim
+# Compiler Plugin for Common Lisp in Vim
 
 This repo contains compiler configuration for (n)vim's quickfix list when using
 Roswell and SBCL. The compiler assumes you have a `*.ros` file as your
