@@ -12,7 +12,7 @@ should still work.
 ## But this isn't perfect.
 
 Afraid not. Vim's `errorformat` is a beast to get right, and SBCL doesn't
-exactly have the most machine parseable compiler output I've ever seen. That's
+exactly have the most machine parsable compiler output I've ever seen. That's
 actually why I wrote this: the output from compiling was so hard to read. I
 wanted vim to go through it for me and pick out the important parts. I've gotten
 it to mostly a good spot, good enough for me to use, but it is sort of
