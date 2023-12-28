@@ -42,3 +42,4 @@ CompilerSet efm=
             \%-G%[\ ]%#%*[0-9]:%.%#,
             \%-G\;\ compiling\ file\ \"%f\"%.%#,
             \%-G\;\ wrote%.%#,
+            \%-G%[\ ]%#compressed%.%#,
