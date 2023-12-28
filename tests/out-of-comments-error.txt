@@ -1,0 +1,31 @@
+Unhandled SB-C::INPUT-ERROR-IN-LOAD in thread #<SB-THREAD:THREAD tid=4650 "main thread" RUNNING
+                                                 {10020F0003}>:
+  READ error during LOAD:
+
+    unmatched close parenthesis
+
+      Line: 24, Column: 45, File-Position: 585
+
+      Stream: #<SB-INT:FORM-TRACKING-STREAM for "file /home/skin/.roswell/init.lisp" {1000234123}>
+
+Backtrace for: #<SB-THREAD:THREAD tid=4650 "main thread" RUNNING {10020F0003}>
+0: (SB-DEBUG::DEBUGGER-DISABLED-HOOK #<SB-C::INPUT-ERROR-IN-LOAD {1002159B93}> #<unused argument> :QUIT T)
+1: (SB-DEBUG::RUN-HOOK *INVOKE-DEBUGGER-HOOK* #<SB-C::INPUT-ERROR-IN-LOAD {1002159B93}>)
+2: (INVOKE-DEBUGGER #<SB-C::INPUT-ERROR-IN-LOAD {1002159B93}>)
+3: (ERROR #<SB-C::INPUT-ERROR-IN-LOAD {1002159B93}>)
+4: (SB-C:COMPILER-ERROR SB-C::INPUT-ERROR-IN-LOAD :CONDITION #<SB-INT:SIMPLE-READER-ERROR "unmatched close parenthesis" {1002159B53}> :STREAM #<SB-INT:FORM-TRACKING-STREAM for "file /home/skin/.roswell/init.lisp" {1000234123}>)
+5: (SB-C::%DO-FORMS-FROM-INFO #<FUNCTION (LAMBDA (SB-KERNEL:FORM &KEY :CURRENT-INDEX &ALLOW-OTHER-KEYS) :IN SB-INT:LOAD-AS-SOURCE) {100023501B}> #<SB-C::SOURCE-INFO {1002108F03}> SB-C::INPUT-ERROR-IN-LOAD)
+6: (SB-INT:LOAD-AS-SOURCE #<SB-INT:FORM-TRACKING-STREAM for "file /home/skin/.roswell/init.lisp" {1000234123}> :VERBOSE NIL :PRINT NIL :CONTEXT "loading")
+7: ((LABELS SB-FASL::LOAD-STREAM-1 :IN LOAD) #<SB-INT:FORM-TRACKING-STREAM for "file /home/skin/.roswell/init.lisp" {1000234123}> NIL)
+8: (SB-FASL::CALL-WITH-LOAD-BINDINGS #<FUNCTION (LABELS SB-FASL::LOAD-STREAM-1 :IN LOAD) {7F86533D776B}> #<SB-INT:FORM-TRACKING-STREAM for "file /home/skin/.roswell/init.lisp" {1000234123}> NIL #<SB-INT:FORM-TRACKING-STREAM for "file /home/skin/.roswell/init.lisp" {1000234123}>)
+9: (LOAD "/home/skin/.roswell/init.lisp" :VERBOSE NIL :PRINT NIL :IF-DOES-NOT-EXIST :ERROR :EXTERNAL-FORMAT :DEFAULT)
+10: (ROSWELL:RUN ((:LOAD "/home/skin/.roswell/init.lisp") (:SCRIPT "/home/skin/.local/etc/roswell/build.ros" "pixie.ros") (:QUIT NIL)))
+11: (SB-INT:SIMPLE-EVAL-IN-LEXENV (ROSWELL:RUN (QUOTE ((:LOAD "/home/skin/.roswell/init.lisp") (:SCRIPT "/home/skin/.local/etc/roswell/build.ros" "pixie.ros") (:QUIT NIL)))) #<NULL-LEXENV>)
+12: (EVAL (ROSWELL:RUN (QUOTE ((:LOAD "/home/skin/.roswell/init.lisp") (:SCRIPT "/home/skin/.local/etc/roswell/build.ros" "pixie.ros") (:QUIT NIL)))))
+13: (SB-IMPL::PROCESS-EVAL/LOAD-OPTIONS ((:EVAL . "(progn #-ros.init(cl:load \"/home/skin/.local/etc/roswell/init.lisp\"))") (:EVAL . "(ros:run '((:load\"/home/skin/.roswell/init.lisp\")(:script \"/home/skin/.local/etc/roswell/build.ros\"\"pixie.ros\")(:quit ())))")))
+14: (SB-IMPL::TOPLEVEL-INIT)
+15: ((FLET SB-UNIX::BODY :IN SB-IMPL::START-LISP))
+16: ((FLET "WITHOUT-INTERRUPTS-BODY-3" :IN SB-IMPL::START-LISP))
+17: (SB-IMPL::%START-LISP)
+
+unhandled condition in --disable-debugger mode, quitting
