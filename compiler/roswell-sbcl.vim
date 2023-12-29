@@ -5,9 +5,22 @@ if exists(":CompilerSet") != 2
     command -nargs=* CompilerSet setlocal <args>
 endif
 
-CompilerSet makeprg=ros\ build\ *.ros
+let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+if glob("*.ros") != ""
+    CompilerSet makeprg=ros\ build\ *.ros
+elseif glob("*.asd") != ""
+    let &l:makeprg = "sbcl --non-interactive --eval \"(asdf:load-system \\\"" . fnamemodify('.', ':p:h:t') . "\\\")\""
+endif
+
 CompilerSet efm=
+            \%-GThis\ is\ SBCL\ 2.3.10\\,\ an\ implementation\ of\ ANSI\ Common\ Lisp.,
+            \%-GMore\ information\ about\ SBCL\ is\ available\ at\ <http://www.sbcl.org/>.,
+            \%-GSBCL\ is\ free\ software\\,\ provided\ as\ is\\,\ with\ absolutely\ no\ warranty.,
+            \%-GIt\ is\ mostly\ in\ the\ public\ domain;\ some\ portions\ are\ provided\ under,
+            \%-GBSD-style\ licenses.\ \ See\ the\ CREDITS\ and\ COPYING\ files\ in\ the,
+            \%-Gdistribution\ for\ more\ information.,
             \%-G%tARNING:%.%#\ :SB-EVAL\ is\ no\ longer\ present\ in\ *FEATURES*,
+            \%-G%tARNING:%.%#\ redefining%.%#,
             \%-Gunhandled\ condition\ in\ --disable-debugger\ mode\\,\ quitting,
             \%-P\;\ file:\ %f,
             \%-C\;\ wrote%.%#,
