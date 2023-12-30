@@ -1,13 +1,12 @@
 # Compiler Plugin for Common Lisp in Vim
 
 This repo contains compiler configuration for (n)vim's quickfix list when using
-Roswell and SBCL. The compiler assumes you have a `*.ros` file as your
-entrypoint in the root directory of your repository, as described in the blog
-post [Release Common Lisp on Your First
+Roswell with SBCL or SBCL by itself. The compiler assumes that you either have
+a `*.asd` file in the current working directory, or that you have a `*.ros`
+file as your entrypoint in the root directory of your repository, as described
+in my blog post [Release Common Lisp on Your First
 Day](https://blog.djha.skin/blog/release-common-lisp-on-your-first-day/). It
-also assumes you use SBCL with roswell. Tweaks are possible, easy even. If you
-don't use roswell, you should be able to adjust `makeprg` accordingly and it
-should still work.
+also assumes you use SBCL with roswell.
 
 ## But this isn't perfect.
 
