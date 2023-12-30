@@ -19,7 +19,8 @@ alpha-ish.
 
 ## What happened to the REPL?
 
-Oh, the REPL's still there in my workflow, but there's nothing like typing
+Oh, the REPL's [still
+there](https://blog.djha.skin/blog/developing-common-lisp-using-gnu-screen-rlwrap-and-vim/) in my workflow, but there's nothing like typing
 `:make` and having vim guide you through all the problems in your code after a
 large rough-draft refactor. I wanted both, because the REPL with SBCL still has
 to be manually searched through to get to the error messages, as evidenced by SO
