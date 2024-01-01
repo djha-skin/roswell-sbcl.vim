@@ -1,4 +1,4 @@
-" Compiler file for roswell-sbcl
+" Compiler file for roswell-sbc
 " By Daniel Jay Haskin <me@djha.skin>
 
 if exists(":CompilerSet") != 2
@@ -13,11 +13,11 @@ elseif glob("*.asd") != ""
 endif
 
 CompilerSet efm=
-            \%-GThis\ is\ SBCL\ 2.3.10\\,\ an\ implementation\ of\ ANSI\ Common\ Lisp.,
+            \%-GThis\ is\ SBCL\ %*[^\ \\,]\\,\ an\ implementation\ of\ ANSI\ Common\ Lisp.,
             \%-GMore\ information\ about\ SBCL\ is\ available\ at\ <http://www.sbcl.org/>.,
             \%-GSBCL\ is\ free\ software\\,\ provided\ as\ is\\,\ with\ absolutely\ no\ warranty.,
             \%-GIt\ is\ mostly\ in\ the\ public\ domain;\ some\ portions\ are\ provided\ under,
-            \%-GBSD-style\ licenses.\ \ See\ the\ CREDITS\ and\ COPYING\ files\ in\ the,
+            \%-GBSD-style\ licenses.%*[\ ]See\ the\ CREDITS\ and\ COPYING\ files\ in\ the,
             \%-Gdistribution\ for\ more\ information.,
             \%-G%tARNING:%.%#\ :SB-EVAL\ is\ no\ longer\ present\ in\ *FEATURES*,
             \%-G%tARNING:%.%#\ redefining%.%#,
@@ -26,6 +26,12 @@ CompilerSet efm=
             \%-C\;\ wrote%.%#,
             \%-C\ %#,
             \%-C,
+            \%-G\ %#,
+            \%-G,
+            \%C%*[\ ]of\ #P\"%f\":%[\ ]%#,
+            \%+C%[\ ]%#Unhandled%.%#,
+            \%+CSee\ also:,
+            \%+C%*[\ ]The\ ANSI\ Standard%.%#,
             \%C\;\ in:\ %m,
             \%C\;\ -->\ %m,
             \%C\;\ ==>\ %#,
@@ -37,20 +43,19 @@ CompilerSet efm=
             \%-C\;\ compilation%.%#,
             \%-C\;\\\\{0\\,1}%*[\ ]Line:\ %l\\,\ Column:\ -\\\\{0\\,1}%c%.%#,
             \%-C\;\\\\{0\\,1}%*[\ ]Stream:\ %*[^\"]\"file\ %f\"%.%#,
-            \%C\;\\\\{0\\,1}%*[\ ]%[%^\ ]\\\\@=%m,
+            \%C\;\\\\{0\\,1}%*[\ ]%[^\ ]\\\\@=%m,
             \%C%[\ ]%#%*[0-9]:%.%#,
-            \%C%[\ ]%#...,
+            \%+C%[\ ]%#...,
             \%A\;\ in:\ %m,
             \%E\;\ caught\ %tRROR:,
             \%W\;\ caught\ %tARNING:,
             \%W\;\ caught\ STYLE-%tARNING:,
             \%-A\;\ compilation%.%#,
             \%W%tARNING:,
-            \%+W%[\ ]%#Unhandled%.%#,
+            \%E%[\ ]%#While\ evaluating\ the\ form\ starting\ at\ line\ %l\\,\ column\ %c,
+            \%+E%[\ ]%#Unhandled%.%#,
             \%-G\;\ %#,
             \%-G\;\ \\\\{3\\,}caught%.%#,
-            \%-G,
-            \%-G%*\\s,
             \%-NBacktrace%.%#,
             \%-G%[\ ]%#%*[0-9]:%.%#,
             \%-G\;\ compiling\ file\ \"%f\"%.%#,
