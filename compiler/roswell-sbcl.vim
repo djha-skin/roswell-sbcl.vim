@@ -43,6 +43,7 @@ CompilerSet efm=
             \%-C\;\ compilation%.%#,
             \%-C\;\\\\{0\\,1}%*[\ ]Line:\ %l\\,\ Column:\ -\\\\{0\\,1}%c%.%#,
             \%-C\;\\\\{0\\,1}%*[\ ]Stream:\ %*[^\"]\"file\ %f\"%.%#,
+            \%C\;%*[\ ](in\ form\ starting\ at\ line:\ %l\\,\ column:\ %c\\,%.%#,
             \%C\;%*[\ ]%[^\ ]\\\\@=%m,
             \%A\;\ in:\ %m,
             \%E\;\ caught\ %tRROR:,
