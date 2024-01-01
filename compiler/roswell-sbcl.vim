@@ -38,7 +38,7 @@ CompilerSet efm=
             \%-C\;\ wrote%.%#,
             \%C\;\ ==>\ %#,
             \%C\;\ -->\ %m,
-            \%C\;\ %#
+            \%C\;\ %#,
             \%C\;\ compiling\ file\ \"%f\"%.%#,
             \%-C\;\ compilation%.%#,
             \%-C\;\\\\{0\\,1}%*[\ ]Line:\ %l\\,\ Column:\ -\\\\{0\\,1}%c%.%#,
