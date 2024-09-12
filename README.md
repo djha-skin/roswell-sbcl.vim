@@ -5,7 +5,7 @@ Roswell with SBCL or SBCL by itself. The compiler assumes that you either have
 a `*.asd` file in the current working directory, or that you have a `*.ros`
 file as your entrypoint in the root directory of your repository, as described
 in my blog post [Release Common Lisp on Your First
-Day](https://blog.djha.skin/blog/release-common-lisp-on-your-first-day/). It
+Day](https://blog.djhaskin.com/blog/release-common-lisp-on-your-first-day/). It
 also assumes you use SBCL with roswell.
 
 ## But this isn't perfect.
@@ -40,8 +40,8 @@ answer](https://stackoverflow.com/questions/65328131/how-do-i-show-the-line-numb
 
 ## Vim and Lisp? Really?
 
-[Yes.](https://blog.djha.skin/blog/developing-common-lisp-using-gnu-screen-rlwrap-and-vim/)
+[Yes.](https://blog.djhaskin.com/blog/developing-common-lisp-using-vim-with-tmux-or-conemu/)
 
 ## Are you sure?
 
-[Uh huh.](https://blog.djha.skin/blog/emacs-users-im-okay-i-promise/)
+[Uh huh.](https://blog.djhaskin.com/blog/emacs-users-im-okay-i-promise/)
