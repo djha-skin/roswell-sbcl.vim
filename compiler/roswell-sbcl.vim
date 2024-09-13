@@ -6,10 +6,13 @@ if exists(":CompilerSet") != 2
 endif
 
 let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
-if glob("*.ros") != ""
-    CompilerSet makeprg=ros\ build\ *.ros
+let ros_path = glob("*.ros")
+let asdf_path = glob("*.asd")
+"fnamemodify('.', ':p:h:t')
+if ros_path != ""
+    let &l:makeprg = "ros build " . ros_path
 elseif glob("*.asd") != ""
-    let &l:makeprg = "sbcl --non-interactive --eval \"(asdf:load-system \\\"" . fnamemodify('.', ':p:h:t') . "\\\")\""
+    let &l:makeprg = "sbcl --non-interactive --eval \"(asdf:load-system \\\"" . asdf_path . "\\\")\""
 endif
 
             "\%+C%*[\ ]The\ ANSI\ Standard%.%#,
