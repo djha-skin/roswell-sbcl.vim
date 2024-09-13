@@ -12,7 +12,9 @@ let asdf_path = glob("*.asd")
 if ros_path != ""
     let &l:makeprg = "ros build " . ros_path
 elseif glob("*.asd") != ""
-    let &l:makeprg = "sbcl --non-interactive --eval \"(asdf:load-system \\\"" . asdf_path . "\\\")\""
+    let &l:makeprg = "sbcl --non-interactive --eval \"(asdf:load-system \\\"" .
+        \ substitute(asdf_path, ".asd$", "", "")
+        \ . "\\\")\""
 endif
 
             "\%+C%*[\ ]The\ ANSI\ Standard%.%#,
